@@ -7,11 +7,7 @@
 </head>
 <?php
 	include("../../core/acess.php");
-<<<<<<< HEAD
 	include("../../core/admin.php");
-=======
-
->>>>>>> 02b0335573d13c668e86596786eee559c84dc5bf
 
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
 	$query = mysqli_query($connection, "Select * from arvore");
