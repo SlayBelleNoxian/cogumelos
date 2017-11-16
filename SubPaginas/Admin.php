@@ -59,7 +59,7 @@
 	<div class="content" >	
 
 		<ul>
-			<li class="libtn"><a href="Arvore/adicionara.php" class="btn">Adicionar Árvore</a></li>
+			<li class="libtn"><a href="Arvore/adicionara.php" class="btn">Adicionar</a></li>
 		</ul>
 		<br>
 		<div class="table_ed">
@@ -85,7 +85,7 @@
 	<br>
 
 	<ul>
-			<li class="libtn"><a href="Fungo/adicionarf.php" class="btn">Adicionar Fungo</a></li>
+			<li class="libtn"><a href="Fungo/adicionarf.php" class="btn">Adicionar</a></li>
 		</ul>
 		<br>
 		<div class="table_ed">
@@ -111,7 +111,7 @@
 	<br>
 	
 		<ul>
-			<li class="libtn"><a href="Lenha/adicionarl.php" class="btn">Adicionar Lenha</a></li>
+			<li class="libtn"><a href="Lenha/adicionarl.php" class="btn">Adicionar</a></li>
 		</ul>
 		<br>
 	<div class="table_ed">
