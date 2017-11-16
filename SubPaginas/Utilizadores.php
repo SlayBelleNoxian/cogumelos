@@ -6,39 +6,11 @@
 	<link rel="stylesheet" href="../css/styleheader.css">
 </head>
 <?php
-  	session_start();
-  	if (!isset($_SESSION['username']))
-  		{
-  			header("Location: ../login.php");
-  			exit();
-  		}
-
-	if($_SESSION['Admin']==0){ 
- 			header("Location: ../index.php");
-		}
+  	include("../core/acess.php");
+	include("../core/admin.php");
 ?>
 <body>
-	<header>
-		<div class="container">
-			<div class="avatar-container">
-				<div class="logo">
-					<img src="../img/user-icon.png">
-				</div>
-				<div class='avatar-text'>
-				<?php echo $_SESSION['Nome']," ",$_SESSION['Sobrenome']; ?>
-				</div>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="../Subpaginas/Lotes.php">Lotes</a></li>
-					<li><a href="../Subpaginas/Admin.php">Admin Zone</a></li>
-					<li><a href="../Subpaginas/Utilizadores.php">Utilizadores</a></li>
-					<li><a href="../Subpaginas/Frutificacao.php">Frutificação</a></li>
-					<li><a href="../core/logout.php">Log Out</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<?php include("../core/header.php");?>
 	<div class="content" >	
 		<ul>
 			<li class="libtn"><a href="Utilizadores/add.php" class="btn">Adicionar</a></li>
@@ -69,7 +41,7 @@
 			<td><?php echo $linha['Email'] ?></td>
 			<td><a href="<?php echo "Utilizadores/Edit.php?CodReg=". $linha['CodReg'] . "&Username=" . $linha['Username'] . "&Nome=" . $linha['Nome'] . "&Sobrenome=" . $linha['Sobrenome'] . "&Email=" . $linha['Email']?>"> <img class="imgs" src="../img/edit.ico"></a></td>
 			<td><a href="<?php echo "Utilizadores/EditarPass.php?CodReg=". $linha['CodReg'] ?>"> <img class="imgs" src="../img/edit1.ico"></a></td>
-			<td><a href="<?php echo "Utilizadores/Eliminar.php?CodReg=". $linha['CodReg'] ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
+			<td><a href="<?php echo "Operacoes/Eliminar.php?id=" . $linha['CodReg'] . "&tipo=reg&tipoid=CodReg"?>"><img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php
 		 } while ($linha = mysqli_fetch_assoc($dados));}

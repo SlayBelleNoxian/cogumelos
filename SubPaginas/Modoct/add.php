@@ -5,7 +5,7 @@
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
 
 	if($connection){
-		$query = mysqli_query($connection, "Insert into modoct values('','$modoct');");
+		$query = mysqli_query($connection, "Insert into modoct(modoct) values('$modoct');");
 		if ($query){
 			header("Location: ../Admin.php");
 		}else {

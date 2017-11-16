@@ -6,16 +6,8 @@
 	<link rel="stylesheet" href="../css/styleheader.css">
 </head>
 <?php
-  	session_start();
-  	if (!isset($_SESSION['username']))
-  		{
-  			header("Location: ../login.php");
-  			exit();
-  		}
-
-	if($_SESSION['Admin']==0){ 
- 			header("Location: ../index.php");
-		}
+  	include("../core/acess.php");
+  	include("../core/admin.php");
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
 	$query = mysqli_query($connection, "Select * from arvore");
 	$query2 = mysqli_query($connection, "Select * from fungo");
@@ -35,31 +27,11 @@
 
 ?>
 <body>
-	<header>
-		<div class="container">
-			<div class="avatar-container">
-				<div class="logo">
-					<img src="../img/user-icon.png">
-				</div>
-				<div class='avatar-text'>
-				<?php echo $_SESSION['Nome']," ",$_SESSION['Sobrenome']; ?>
-				</div>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="../Subpaginas/Lotes.php">Lotes</a></li>
-					<li><a href="../Subpaginas/Admin.php">Admin Zone</a></li>
-					<li><a href="../Subpaginas/Utilizadores.php">Utilizadores</a></li>
-					<li><a href="../Subpaginas/Frutificacao.php">Frutificação</a></li>
-					<li><a href="../core/logout.php">Log Out</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<?php include("../core/header.php");?>
 	<div class="content" >	
 
 		<ul>
-			<li class="libtn"><a href="Arvore/adicionara.php" class="btn">Adicionar Árvore</a></li>
+			<li class="libtn"><a href="Arvore/adicionara.php" class="btn">Adicionar</a></li>
 		</ul>
 		<br>
 		<div class="table_ed">
@@ -74,7 +46,7 @@
 		<tr>
 			<td><?php echo $linha1['Arvore'] ?></td>
 			<td><a href="<?php echo "Arvore/EditArvore.php?Idarvore=". $linha1['Idarvore'] . "&Arvore=" . $linha1['Arvore']?>"> <img class="imgs" src="../img/Edit.ico"></a></td>
-			<td><a href="<?php echo "Arvore/Eliminararvore.php?Idarvore=". $linha1['Idarvore'] ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
+			<td><a href="<?php echo "Operacoes/Eliminar.php?id=". $linha1['Idarvore']. "&tipo=arvore&tipoid=Idarvore" ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php
 		 } while ($linha1 = mysqli_fetch_assoc($query));}
@@ -85,7 +57,7 @@
 	<br>
 
 	<ul>
-			<li class="libtn"><a href="Fungo/adicionarf.php" class="btn">Adicionar Fungo</a></li>
+			<li class="libtn"><a href="Fungo/adicionarf.php" class="btn">Adicionar</a></li>
 		</ul>
 		<br>
 		<div class="table_ed">
@@ -100,7 +72,7 @@
 		<tr>
 			<td><?php echo $linha2['Fungo'] ?></td>
 			<td><a href="<?php echo "Fungo/EditFungo.php?Idfungo=". $linha2['Idfungo'] . "&Fungo=" . $linha2['Fungo']?>"> <img class="imgs" src="../img/Edit.ico"></a></td>
-			<td><a href="<?php echo "Fungo/EliminarFungo.php?Idfungo=". $linha2['Idfungo'] ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
+			<td><a href="<?php echo "Operacoes/Eliminar.php?id=". $linha2['Idfungo']. "&tipo=fungo&tipoid=Idfungo" ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php
 		 } while ($linha2 = mysqli_fetch_assoc($query2));}
@@ -111,7 +83,7 @@
 	<br>
 	
 		<ul>
-			<li class="libtn"><a href="Lenha/adicionarl.php" class="btn">Adicionar Lenha</a></li>
+			<li class="libtn"><a href="Lenha/adicionarl.php" class="btn">Adicionar</a></li>
 		</ul>
 		<br>
 	<div class="table_ed">
@@ -128,7 +100,7 @@
 		<tr>
 			<td><?php echo $linha3['Nome'] ?></td>
 			<td><a href="<?php echo "Lenha/EditLenha.php?Idlenha=". $linha3['Idlenha'] . "&Nome=" . $linha3['Nome']?>"> <img class="imgs" src="../img/Edit.ico"></a></td>
-			<td><a href="<?php echo "Lenha/EliminarLenha.php?Idlenha=". $linha3['Idlenha'] ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
+			<td><a href="<?php echo "Operacoes/Eliminar.php?id=". $linha3['Idlenha']. "&tipo=lenha&tipoid=Idlenha" ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php
 		 } while ($linha3 = mysqli_fetch_assoc($query3));}
@@ -157,7 +129,7 @@
 		<tr>
 			<td><?php echo $linha4['modoct'] ?></td>
 			<td><a href="<?php echo "modoct/Edit.php?idmodoct=". $linha4['idmodoct'] . "&modoct=" . $linha4['modoct']?>"> <img class="imgs" src="../img/Edit.ico"></a></td>
-			<td><a href="<?php echo "modoct/Eliminar.php?idmodoct=". $linha4['idmodoct'] ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
+			<td><a href="<?php echo "Operacoes/Eliminar.php?id=". $linha4['idmodoct']. "&tipo=modoct&tipoid=idmodoct" ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php
 		 } while ($linha4 = mysqli_fetch_assoc($query4));}
@@ -186,7 +158,7 @@
 		<tr>
 			<td><?php echo $linha5['modo'] ?></td>
 			<td><a href="<?php echo "modo/Edit.php?idmodo=". $linha5['idmodo'] . "&modo=" . $linha5['modo']?>"> <img class="imgs" src="../img/Edit.ico"></a></td>
-			<td><a href="<?php echo "modo/Eliminar.php?idmodo=". $linha5['idmodo'] ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
+			<td><a href="<?php echo "Operacoes/Eliminar.php?id=". $linha5['idmodo']. "&tipo=modo&tipoid=idmodo" ?>"> <img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php
 		 } while ($linha5 = mysqli_fetch_assoc($query5));}

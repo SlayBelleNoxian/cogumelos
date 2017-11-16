@@ -6,38 +6,11 @@
 	<link rel="stylesheet" href="../../css/styleheader.css">
 </head>
 <?php
-	session_start();
-  	if (!isset($_SESSION['username']))
-  		{
-  			header("Location: ../../login.php");
-  			exit();
-  		}
+	include("../../core/acess.php");
 
 ?>
 <body>
-	<header>
-		<div class="container">
-			<div class="avatar-container">
-				<div class="logo">
-					<img src="../../img/user-icon.png">
-				</div>
-				<div class='avatar-text'>
-				<?php echo $_SESSION['Nome']," ",$_SESSION['Sobrenome']; ?>
-				</div>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="../../Subpaginas/Lotes.php">Lotes</a></li>
-					<?php if($_SESSION['Admin']==1){ ?>
-					<li><a href="../../Subpaginas/Admin.php">Admin Zone</a></li>
-					<li><a href="../../Subpaginas/Utilizadores.php">Utilizadores</a></li>
-					<?php }?>
-					<li><a href="../../Subpaginas/Frutificacao.php">Frutificação</a></li>
-					<li><a href="../../core/logout.php">Log Out</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<?php include("../../core/header.php");?>
 	<div class="content" >	
 		<ul>
 			<li class="libtn"><a href="add.php" class="btn">Adicionar</a></li>
@@ -82,7 +55,7 @@ if ($connection){
 			<td><?php echo $linha['Kg'] ?></td>
 			<td><?php echo $linha['Repouso'] ?></td>
 			<td><a href="<?php echo "Edit.php?id=". $linha['id'] . "&N=" . $linha['N'] . "&ChoqueTermico=" . $linha['ChoqueTermico'] . "&ModoCT=" . $linha['ModoCT'] . "&Data=" . $linha['Data'] . "&Modo=" . $linha['Modo'] . "&Kg=" . $linha['Kg'] . "&Repouso=". $linha['Repouso']?>"> <img class="imgs" src="../../img/edit.ico"></a></td>
-			<td><a href="<?php echo "Eliminar.php?id=". $linha['id'] ?>"> <img class="imgs" src="../../img/Delete.ico"></a></td>
+			<td><a href="<?php echo "Operacoes/Eliminar.php?id=" . $linha['id'] . "&tipo=frutificacao&tipoid=id"?>"><img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php
 		 } while ($linha = mysqli_fetch_assoc($query));}

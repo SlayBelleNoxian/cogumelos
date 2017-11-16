@@ -5,7 +5,7 @@
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
 
 	if($connection){
-		$query = mysqli_query($connection, "Insert into Lenha values('','$Nome');");
+		$query = mysqli_query($connection, "Insert into Lenha (Nome) values('$Nome');");
 		if ($query){
 			header("Location: ../Admin.php");
 		}else {

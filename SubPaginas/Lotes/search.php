@@ -6,38 +6,10 @@
 	<link rel="stylesheet" href="../../css/styleheader.css">
 </head>
 <?php
-	session_start();
-  	if (!isset($_SESSION['username']))
-  		{
-  			header("Location: ../../login.php");
-  			exit();
-  		}
-
+	include("../../core/acess.php");
 ?>
 <body>
-	<header>
-		<div class="container">
-			<div class="avatar-container">
-				<div class="logo">
-					<img src="../../img/user-icon.png">
-				</div>
-				<div class='avatar-text'>
-				<?php echo $_SESSION['Nome']," ",$_SESSION['Sobrenome']; ?>
-				</div>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="../../Subpaginas/Lotes.php">Lotes</a></li>
-					<?php if($_SESSION['Admin']==1){ ?>
-					<li><a href="../../Subpaginas/Admin.php">Admin Zone</a></li>
-					<li><a href="../../Subpaginas/Utilizadores.php">Utilizadores</a></li>
-					<?php }?>
-					<li><a href="../../Subpaginas/Frutificacao.php">Frutificação</a></li>
-					<li><a href="../../core/logout.php">Log Out</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<?php include("../../core/header.php");?>
 	<div class="content" >	
 		<ul>
 			<li class="libtn"><a href="add.php" class="btn">Adicionar Lote</a></li>
@@ -80,7 +52,7 @@ if ($connection){
 			<td><?php echo $linha['EspecieLenha'] ?></td>
 			<td><?php echo $linha['ProducaoTotal'] ?></td>
 			<td><a href="<?php echo "EditLotes.php?id=". $linha['id'] . "&N=" . $linha['N'] . "&DatadeCriacao=" . $linha['DatadeCriacao'] . "&Especiefungo=" . $linha['EspecieFungo'] . "&Especiearvore=" . $linha['EspecieArvore'] . "&EspecieLenha=" . $linha['EspecieLenha'] . "&ProducaoTotal=". $linha['ProducaoTotal']?>"><img class="imgs" src="../../img/edit.ico"></a></td></td>
-			<td><a href="<?php echo "Eliminar.php?id=". $linha['id'] ?>"> <img class="imgs" src="../../img/Delete.ico"></a></td>
+			<td><a href="<?php echo "Operacoes/Eliminar.php?id=" . $linha['id'] . "&tipo=lote&tipoid=id"?>"><img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php
 		 } while ($linha = mysqli_fetch_assoc($query));}

@@ -5,7 +5,7 @@
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
 
 	if($connection){
-		$query = mysqli_query($connection, "Insert into modo values('','$modo');");
+		$query = mysqli_query($connection, "Insert into modo (modo)values('$modo');");
 		if ($query){
 			header("Location: ../Admin.php");
 		}else {
