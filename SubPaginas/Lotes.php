@@ -10,7 +10,7 @@
 	<?php include("../core/header.php");?>
 	<div class="content" >	
 		<ul>
-			<li class="libtn"><a href="Lotes/add.php" class="btn">Adicionar Lote</a></li>
+			<li class="libtn"><a href="Lotes/add.php" class="btn">Adicionar</a></li>
 		</ul>
 			<?php
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
