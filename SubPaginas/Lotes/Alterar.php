@@ -8,7 +8,7 @@
 	$Elenha = filter_input(INPUT_GET, "EspecieLenha");
 	$prod = filter_input(INPUT_GET, "ProducaoTotal");
 
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../../core/connection.php");
 
 	if ($connection){
 		$query = mysqli_query($connection, "update lote set N='$N', DataDeCriacao='$data', Especiefungo='$Efungo', Especiearvore='$Earvore', EspecieLenha='$Elenha' ,ProducaoTotal='$prod' where id='$id';");

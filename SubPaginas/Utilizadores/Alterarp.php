@@ -1,5 +1,5 @@
 <?php
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../../core/connection.php");
 	$CodReg = filter_input(INPUT_GET, "CodReg");
  	$Password = filter_input(INPUT_GET, "Password");
 	$Npassword = filter_input(INPUT_GET, "Npassword");

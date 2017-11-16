@@ -9,7 +9,7 @@
 			$Kg = filter_input(INPUT_GET, "Kg");
 			$Repouso = filter_input(INPUT_GET, "Repouso");
 
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../../core/connection.php");
 
 	if ($connection){
 		$query = mysqli_query($connection, "update frutificacao set N='$N', ChoqueTermico='$ChoqueTermico', ModoCT='$ModoCT', Data='$Data', Modo='$Modo' ,Kg='$Kg' ,Repouso='$Repouso' where id='$id';");

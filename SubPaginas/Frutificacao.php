@@ -13,9 +13,8 @@
 			<li class="libtn"><a href="Frutificacao/add.php" class="btn">Adicionar</a></li>
 		</ul>
 			<?php
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../core/connection.php");
 	$dados = mysqli_query($connection, "select * from frutificacao order by N");
-	$tipo = 
 	$linha = mysqli_fetch_assoc($dados);
 	$total = mysqli_num_rows($dados);
 	?>

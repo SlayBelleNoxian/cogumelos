@@ -3,7 +3,7 @@
 	$idmodoct = filter_input(INPUT_GET, "idmodoct");
 	$modoct = filter_input(INPUT_GET, "modoct");
 
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../../core/connection.php");
 
 	if ($connection){
 		$query = mysqli_query($connection, "update modoct set modoct='$modoct' where idmodoct='$idmodoct';");

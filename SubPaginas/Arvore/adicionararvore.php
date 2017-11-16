@@ -2,8 +2,7 @@
 	$idarvore = filter_input(INPUT_GET, "Idarvore");
  	$arvore = filter_input(INPUT_GET, "Arvore");
 
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
-
+	include("../../core/connection.php");
 	if($connection){
 		$query = mysqli_query($connection, "Insert into arvore(arvore) values('$arvore');");
 		if ($query){

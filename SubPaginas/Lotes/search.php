@@ -35,7 +35,7 @@
 		<?php
 $search = filter_input(INPUT_GET, "search");
 
-$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+include("../../core/connection.php");
 
 if ($connection){
 		$query = mysqli_query($connection, "select * from lote where N like'%".$search."%' or Especiefungo like'%".$search."%' or Especiearvore like '%".$search."%' or EspecieLenha like '%".$search."%' or ProducaoTotal like '%".$search."%'");

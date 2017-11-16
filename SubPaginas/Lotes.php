@@ -13,7 +13,7 @@
 			<li class="libtn"><a href="Lotes/add.php" class="btn">Adicionar</a></li>
 		</ul>
 			<?php
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+		include("../core/connection.php");
 	$dados = mysqli_query($connection, "select * from lote order by N");
 	$linha = mysqli_fetch_assoc($dados);
 	$total = mysqli_num_rows($dados);

@@ -2,7 +2,7 @@
 $id = filter_input(INPUT_GET, "id");
 $tipo = filter_input(INPUT_GET, "tipo");
 $tipoid = filter_input(INPUT_GET, "tipoid");
-$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+include("../../core/connection.php");
 
 if($connection){
 	$query = mysqli_query($connection, "Delete from ".$tipo." where ".$tipoid." ='$id'");

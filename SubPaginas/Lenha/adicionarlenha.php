@@ -2,7 +2,7 @@
 	$Idlenha = filter_input(INPUT_GET, "Idlenha");
  	$Nome = filter_input(INPUT_GET, "Nome");
 
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../../core/connection.php");
 
 	if($connection){
 		$query = mysqli_query($connection, "Insert into Lenha (Nome) values('$Nome');");

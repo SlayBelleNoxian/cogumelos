@@ -3,7 +3,7 @@
 	$idmodo = filter_input(INPUT_GET, "idmodo");
 	$modo = filter_input(INPUT_GET, "modo");
 
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../../core/connection.php");
 
 	if ($connection){
 		$query = mysqli_query($connection, "update modo set modo='$modo' where idmodo='$idmodo';");

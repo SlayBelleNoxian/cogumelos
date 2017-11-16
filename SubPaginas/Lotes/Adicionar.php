@@ -7,7 +7,7 @@
 	$Elenha = filter_input(INPUT_GET, "EspecieLenha");
 	$prod = filter_input(INPUT_GET, "ProducaoTotal");
 
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../../core/connection.php");
 
 	if($connection){
 		$query = mysqli_query($connection, "Insert into lote(N,DataDeCriacao,Especiefungo,Especiearvore,EspecieLenha,ProducaoTotal) values('$N','$data','$Efungo','$Earvore','$Elenha','$prod');");

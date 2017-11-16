@@ -30,7 +30,7 @@
 
 <?php
 
-$connection = mysqli_connect("localhost","root","","cogumelos");
+include("core/connection.php");
 
 if(isset($_POST['submit']))
 {

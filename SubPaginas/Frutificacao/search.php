@@ -37,7 +37,7 @@
 		<?php
 $search = filter_input(INPUT_GET, "search");
 
-$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+include("../../core/connection.php");
 
 if ($connection){
 		$query = mysqli_query($connection, "select * from Frutificacao where N like'%".$search."%' or ModoCT like '%".$search."%' or Modo like '%".$search."%' or Kg like '%".$search."%'");

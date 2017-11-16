@@ -3,7 +3,7 @@
 	$Idarvore = filter_input(INPUT_GET, "Idarvore");
 	$Arvore = filter_input(INPUT_GET, "Arvore");
 
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../../core/connection.php");
 
 	if ($connection){
 		$query = mysqli_query($connection, "update arvore set Arvore='$Arvore' where Idarvore='$Idarvore';");

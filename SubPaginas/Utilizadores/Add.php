@@ -22,7 +22,7 @@
 			<tr><td><p align="right"><input type ="submit" name="submit" value="Registar" class="btn"/></p></td></tr>
 <?php
 
-$connection = mysqli_connect("localhost","root","","cogumelos");
+include("../../core/connection.php");
 
 if(isset($_POST['submit']))
 {

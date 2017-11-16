@@ -7,9 +7,7 @@
 </head>
 <?php
 	include("../../core/acess.php");
-
-
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+	include("../../core/connection.php");
 	$query = mysqli_query($connection, "Select * from arvore");
 	$query2 = mysqli_query($connection, "Select * from fungo");
 	$query3 = mysqli_query($connection, "Select * from lenha");

@@ -6,7 +6,7 @@
 	$Sobrenome = filter_input(INPUT_GET, "Sobrenome");
 	$Email = filter_input(INPUT_GET, "Email");
 
-	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
+include("../../core/connection.php");
 
 	if ($connection){
 		$query = mysqli_query($connection, "update reg set Username='$Username', Nome='$Nome', Sobrenome='$Sobrenome', Email='$Email' where CodReg='$CodReg';");
