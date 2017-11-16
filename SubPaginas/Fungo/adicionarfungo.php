@@ -5,7 +5,7 @@
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
 
 	if($connection){
-		$query = mysqli_query($connection, "Insert into fungo values('','$fungo');");
+		$query = mysqli_query($connection, "Insert into fungo(fungo) values('$fungo');");
 		if ($query){
 			header("Location: ../Admin.php");
 		}else {

@@ -7,40 +7,12 @@
 	</head>
 	<?php
 		$CodReg = filter_input(INPUT_GET, "CodReg");
-  	session_start();
-  	if (!isset($_SESSION['username']))
-  		{
-  			header("Location: ../../login.php");
-  			exit();
-  		}
-
-	if($_SESSION['Admin']==0){ 
- 			header("Location: ../index.php");
-		}
+  	include("../../core/acess.php");
+	include("../../core/admin.php");
 		
 	?>
 	<body>
-		<header>
-			<div class="container">
-				<div class="avatar-container">
-					<div class="logo">
-						<img src="../../img/user-icon.png">
-					</div>
-					<div class='avatar-text'>
-						<?php echo $_SESSION['Nome']," ",$_SESSION['Sobrenome']; ?>
-					</div>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="../../Subpaginas/Lotes.php">Lotes</a></li>
-						<li><a href="../../Subpaginas/Admin.php">Admin Zone</a></li>
-						<li><a href="../../Subpaginas/Utilizadores.php">Utilizadores</a></li>
-						<li><a href="../../Subpaginas/Frutificacao.php">Frutificação</a></li>
-						<li><a href="../../core/logout.php">Log Out</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+		<?php include("../../core/header.php");?>
 		<div class="content" >	
 	  		<form action="Alterarp.php">
 	  			<table>

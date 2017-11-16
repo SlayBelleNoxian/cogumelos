@@ -10,29 +10,7 @@
 ?>
 <body>
 <?php header("Location: Subpaginas/Lotes.php");?>
-<header>
-	<div class="container">
-		<div class="avatar-container">
-			<div class="logo">
-				<img src="img/user-icon.png">
-			</div>
-			<div class='avatar-text'>
-				<?php echo $_SESSION['Nome']," ",$_SESSION['Sobrenome']; ?>
-			</div>
-		</div>
-		<nav>
-			<ul>
-				<li><a href="Subpaginas/Lotes.php">Lotes</a></li>
-				<?php if($_SESSION['Admin']==1){ ?>
-				<li><a href="Subpaginas/Admin.php">Admin Zone</a></li>
-				<li><a href="Subpaginas/Utilizadores.php">Utilizadores</a></li>
-				<?php }?>
-				<li><a href="Subpaginas/Frutificacao.php">Frutificação</a></li>
-				<li><a href="core/logout.php">Log Out</a></li>
-			</ul>
-		</nav>
-	</div>
-	</header>
+<?php include("core/header.php");?>
 	<div class="content" ></div>
 </body>
 <script src="js/jquery-3.2.1.min.js"></script>
