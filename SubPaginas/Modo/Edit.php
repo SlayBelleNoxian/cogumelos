@@ -7,7 +7,7 @@
 </head>
 <?php
 	include("../../core/acess.php");
-
+	include("../../core/admin.php");
 ?>
 <body>
 	<?php include("../../core/header.php");?>
