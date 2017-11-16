@@ -44,7 +44,6 @@
 	<div class="content" >	
 	  <form action="adicionarlenha.php">
 			<table>
-	  		<input type="hidden" name="idfungo" value="<?php echo $id?>">
 	  		<tr><td><p align="right">Especie De Lenha: <input required type="text" name="Nome"></p></td></tr>
 	  		</table>
 	  		<input class="btn"type="Submit" name="Adicionar" value="Adicionar">

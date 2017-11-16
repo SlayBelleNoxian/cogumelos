@@ -43,7 +43,6 @@
 	<div class="content" >	
 	  <form action="adicionararvore.php">
 			<table>
-	  		<input type="hidden" name="idarvore" value="<?php echo $id?>">
 	  		<tr><td><p align="right">Especie De Arvore: <input required type="text" name="Arvore"></p></td></tr>
 	  		</table>
 	  		<input class="btn"type="Submit" name="Adicionar" value="Adicionar">

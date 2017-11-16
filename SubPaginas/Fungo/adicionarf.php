@@ -44,7 +44,6 @@
 	<div class="content" >	
 	  <form action="adicionarfungo.php">
 			<table>
-	  		<input type="hidden" name="idfungo" value="<?php echo $id?>">
 	  		<tr><td><p align="right">Especie De Fungo: <input required type="text" name="Fungo"></p></td></tr>
 	  		</table>
 	  		<input class="btn"type="Submit" name="Adicionar" value="Adicionar">

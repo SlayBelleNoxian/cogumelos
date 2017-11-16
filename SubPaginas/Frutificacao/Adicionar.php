@@ -11,7 +11,7 @@
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
 
 	if($connection){
-		$query = mysqli_query($connection, "Insert into frutificacao values('','$N','$ChoqueTermico','$ModoCT','$Data','$Modo','$Kg','$Repouso');");
+		$query = mysqli_query($connection, "Insert into frutificacao(N,ChoqueTermico,ModoCT, Data, Modo, Kg, Repouso) values('$N','$ChoqueTermico','$ModoCT','$Data','$Modo','$Kg','$Repouso');");
 		echo $query;
 		if ($query){
 			header("Location: ../frutificacao.php");

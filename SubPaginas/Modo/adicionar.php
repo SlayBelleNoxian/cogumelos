@@ -46,7 +46,6 @@
 	<div class="content" >	
 	  <form action="add.php">
 			<table>
-	  		<input type="hidden" name="idmodo" value="<?php echo $id?>">
 	  		<tr><td><p align="right">Modo: <input required type="text" name="modo"></p></td></tr>
 	  		</table>
 	  		<input class="btn"type="Submit" name="Adicionar" value="Adicionar">

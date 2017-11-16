@@ -5,7 +5,7 @@
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
 
 	if($connection){
-		$query = mysqli_query($connection, "Insert into arvore values('','$arvore');");
+		$query = mysqli_query($connection, "Insert into arvore(arvore) values('$arvore');");
 		if ($query){
 			header("Location: ../Admin.php");
 		}else {
