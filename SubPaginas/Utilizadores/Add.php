@@ -7,7 +7,14 @@
 <body>
 <?php
  	include("../../core/acess.php");
+<<<<<<< HEAD
 	include("../../core/admin.php");
+=======
+
+	if($_SESSION['Admin']==0){ 
+ 			header("Location: ../index.php");
+		}
+>>>>>>> 02b0335573d13c668e86596786eee559c84dc5bf
 		?>
 <header>
 	<?php include("../../core/header.php"); ?>
