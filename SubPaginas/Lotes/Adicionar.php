@@ -10,7 +10,7 @@
 	$connection = mysqli_connect("localhost", "root", "", "cogumelos");
 
 	if($connection){
-		$query = mysqli_query($connection, "Insert into lote values('','$N','$data','$Efungo','$Earvore','$Elenha','$prod');");
+		$query = mysqli_query($connection, "Insert into lote(N,DataDeCriacao,Especiefungo,Especiearvore,EspecieLenha,ProducaoTotal) values('$N','$data','$Efungo','$Earvore','$Elenha','$prod');");
 		if ($query){
 			header("Location: ../Lotes.php");
 		}else {
