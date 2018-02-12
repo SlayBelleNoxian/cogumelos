@@ -12,7 +12,7 @@
 	<?php include("../../core/header.php");?>
 	<div class="content" >	
 		<ul>
-			<li class="libtn"><a href="add.php" class="btn">Adicionar Lote</a></li>
+			<li class="libtn"><a href="Add.php" class="btn">Adicionar Lote</a></li>
 		</ul>
 			<br>
 		<div class="searchbox" align="right">
@@ -51,8 +51,8 @@ if ($connection){
 			<td><?php echo $linha['EspecieArvore'] ?></td>
 			<td><?php echo $linha['EspecieLenha'] ?></td>
 			<td><?php echo $linha['ProducaoTotal'] ?></td>
-			<td><a href="<?php echo "EditLotes.php?id=". $linha['id'] . "&N=" . $linha['N'] . "&DatadeCriacao=" . $linha['DatadeCriacao'] . "&Especiefungo=" . $linha['EspecieFungo'] . "&Especiearvore=" . $linha['EspecieArvore'] . "&EspecieLenha=" . $linha['EspecieLenha'] . "&ProducaoTotal=". $linha['ProducaoTotal']?>"><img class="imgs" src="../../img/edit.ico"></a></td></td>
-			<td><a href="<?php echo "Operacoes/Eliminar.php?id=" . $linha['id'] . "&tipo=lote&tipoid=id"?>"><img class="imgs" src="../img/Delete.ico"></a></td>
+			<td><a href="<?php echo "EditLotes.php?id=". $linha['id'] . "&N=" . $linha['N'] . "&DatadeCriacao=" . $linha['DatadeCriacao'] . "&Especiefungo=" . $linha['EspecieFungo'] . "&Especiearvore=" . $linha['EspecieArvore'] . "&EspecieLenha=" . $linha['EspecieLenha'] . "&ProducaoTotal=". $linha['ProducaoTotal']?>"><img class="imgs" src="../../img/Edit.ico"></a></td></td>
+			<td><a href="<?php echo "Operacoes/Eliminar.php?id=" . $linha['id'] . "&tipo=lote&tipoid=id"?>"><img class="imgs" src="../../img/Delete.ico"></a></td>
 		</tr>
 		<?php
 		 } while ($linha = mysqli_fetch_assoc($query));}
