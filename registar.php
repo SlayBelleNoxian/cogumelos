@@ -39,19 +39,19 @@ if(isset($_POST['submit']))
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$email = $_POST['email'];
-	$query1 = mysqli_query($connection, "SELECT * FROM Reg WHERE username='$username'");
+	$query1 = mysqli_query($connection, "SELECT * FROM reg WHERE username='$username'");
 	$salted = "28su2h8j28jwksjdhkasjdh".$password."dsfsaddsfas";
 	$hased = hash('sha512', $salted);
 	if(mysqli_num_rows($query1) > 0)
 	{
 		echo '<span style="color:#fff">Username já existe!</span>';
 	} else{
-	$query = "insert into Reg (Username, Password, Nome, Sobrenome,Email) values ('$username','$hased','$first_name','$last_name','$email')";
+	$query = "insert into reg (Username, Password, Nome, Sobrenome,Email) values ('$username','$hased','$first_name','$last_name','$email')";
 	if(mysqli_query($connection, $query)){
 		echo '<span style="color:#fff">Utilizador registado!</span>';
 		}
 	}
-}	
+}
 ?>
 		</form>
 	</div>

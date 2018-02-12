@@ -9,7 +9,7 @@
 	include ("core/acess.php");
 ?>
 <body>
-<?php header("Location: Subpaginas/Lotes.php");?>
+<?php header("Location: SubPaginas/Lotes.php");?>
 <?php include("core/header.php");?>
 	<div class="content" ></div>
 </body>
@@ -24,4 +24,4 @@
 		}
 	});
 </script>
-</html>	
+</html>

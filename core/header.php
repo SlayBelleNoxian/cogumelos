@@ -10,12 +10,12 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a href="/cogumelos/Subpaginas/Lotes.php">Lotes</a></li>
+					<li><a href="/cogumelos/SubPaginas/Lotes.php">Lotes</a></li>
 					<?php if ($_SESSION['Admin']== 1){?>
-					<li><a href="/cogumelos/Subpaginas/Admin.php">Admin Zone</a></li>
-					<li><a href="/cogumelos/Subpaginas/Utilizadores.php">Utilizadores</a></li>
+					<li><a href="/cogumelos/SubPaginas/Admin.php">Admin Zone</a></li>
+					<li><a href="/cogumelos/SubPaginas/Utilizadores.php">Utilizadores</a></li>
 					<?php }?>
-					<li><a href="/cogumelos/Subpaginas/Frutificacao.php">Frutificação</a></li>
+					<li><a href="/cogumelos/SubPaginas/Frutificacao.php">Frutificação</a></li>
 					<li><a href="/cogumelos/core/logout.php">Log Out</a></li>
 				</ul>
 			</nav>

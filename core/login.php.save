@@ -10,20 +10,18 @@ $hased = hash('sha512', $salted);
 
 if ($username && $password)
 {
-	$connection = mysqli_connect("localhost", "root", "g987412365", "cogumelos");
-	$sql = "SELECT * FROM reg where username='".$username."'";
+	include("connection.php");
 
-	$query = mysqli_query($connection, $sql);
+	$query = mysqli_query($conn"SELECT * FROM Reg WHERE username='$username' ");
 
-
-	$numrows = mysqli_num_rows($query);
+	$numrows = mysqli_num_rows($connection, $query);
 
 	if ($numrows!==0)
 	{
 		while($row = mysqli_fetch_assoc($query))
 		{
 			$dbusername = $row['Username'];
-$dbpassword = $row['Password'];
+			$dbpassword = $row['Password'];
 			$dbnome = $row['Nome'];
 			$dbsb = $row['Sobrenome'];
 			$CodReg = $row['CodReg'];

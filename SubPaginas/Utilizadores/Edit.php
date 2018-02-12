@@ -19,7 +19,7 @@
 			$Sobrenome = filter_input(INPUT_GET, "Sobrenome");
 			$Email = filter_input(INPUT_GET, "Email");
 		?>
-	  	<form action="alterar.php">
+	  	<form action="Alterar.php">
 	  	<table>
 	  			<input type="hidden" name="CodReg" value="<?php echo $CodReg?>">
 	  			<tr><td><p align="right">Username: <input type="text" required name="Username" Value="<?php echo $Username ?>"></p></td></tr>

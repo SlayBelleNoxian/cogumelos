@@ -14,7 +14,7 @@
 		$query = mysqli_query($connection, "Insert into frutificacao(N,ChoqueTermico,ModoCT, Data, Modo, Kg, Repouso) values('$N','$ChoqueTermico','$ModoCT','$Data','$Modo','$Kg','$Repouso');");
 		echo $query;
 		if ($query){
-			header("Location: ../frutificacao.php");
+			header("Location: ../Frutificacao.php");
 		}else {
 			die ("Error: ".mysqli_error($connection));
 		}

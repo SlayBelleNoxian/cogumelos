@@ -14,7 +14,7 @@
 	if ($connection){
 		$query = mysqli_query($connection, "update frutificacao set N='$N', ChoqueTermico='$ChoqueTermico', ModoCT='$ModoCT', Data='$Data', Modo='$Modo' ,Kg='$Kg' ,Repouso='$Repouso' where id='$id';");
 		if ($query){
-			header("Location: ../frutificacao.php");
+			header("Location: ../Frutificacao.php");
 		} else {
 			die ("Erro: ".mysqli_error($connection));
 		}

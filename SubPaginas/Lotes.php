@@ -10,7 +10,7 @@
 	<?php include("../core/header.php");?>
 	<div class="content" >	
 		<ul>
-			<li class="libtn"><a href="Lotes/add.php" class="btn">Adicionar</a></li>
+			<li class="libtn"><a href="Lotes/Add.php" class="btn">Adicionar</a></li>
 		</ul>
 			<?php
 		include("../core/connection.php");
@@ -47,7 +47,7 @@
 			<td><?php echo $linha['EspecieArvore'] ?></td>
 			<td><?php echo $linha['EspecieLenha'] ?></td>
 			<td><?php echo $linha['ProducaoTotal'] ?></td>
-			<td><a href="<?php echo "Lotes/EditLotes.php?id=". $linha['id'] . "&N=" . $linha['N'] . "&DatadeCriacao=" . $linha['DatadeCriacao'] . "&Especiefungo=" . $linha['EspecieFungo'] . "&Especiearvore=" . $linha['EspecieArvore'] . "&EspecieLenha=" . $linha['EspecieLenha'] . "&ProducaoTotal=". $linha['ProducaoTotal']?>"> <img class="imgs" src="../img/edit.ico"></a></td>
+			<td><a href="<?php echo "Lotes/EditLotes.php?id=". $linha['id'] . "&N=" . $linha['N'] . "&DatadeCriacao=" . $linha['DatadeCriacao'] . "&Especiefungo=" . $linha['EspecieFungo'] . "&Especiearvore=" . $linha['EspecieArvore'] . "&EspecieLenha=" . $linha['EspecieLenha'] . "&ProducaoTotal=". $linha['ProducaoTotal']?>"> <img class="imgs" src="../img/Edit.ico"></a></td>
 			<td><a href="<?php echo "Operacoes/Eliminar.php?id=" . $linha['id'] . "&tipo=lote&tipoid=id"?>"><img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php

@@ -1,3 +1,4 @@
+<html>
 <head>
 	<meta charset="utf-8">
 	<title> Registar </title>
@@ -12,7 +13,7 @@
 <header>
 	<?php include("../../core/header.php"); ?>
 	<div class="content" >
-	<table>	
+	<table>
 		<Form id="registerform" action="" method="POST">
 			<tr><td><p align="right">Primeiro Nome: <input type="text" id="firstname" name="fname" placeholder="Primeiro Nome" required/></p></td></tr>
 			<tr><td><p align="right">Ultimo Nome: <input type="text" id="lastname" name="lname" placeholder="Ultimo Nome" required/></p></td></tr>
@@ -31,21 +32,24 @@ if(isset($_POST['submit']))
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$email = $_POST['email'];
-	$query1 = mysqli_query($connection, "SELECT * FROM Reg WHERE username='$username'");
+	$query1 = mysqli_query($connection, "SELECT * FROM reg where username='".$username."'");
 	$salted = "28su2h8j28jwksjdhkasjdh".$password."dsfsaddsfas";
 	$hased = hash('sha512', $salted);
 	if(mysqli_num_rows($query1) > 0)
 	{
-		echo 'Username já existe!</span>';
+		echo '<span>Username já existe!</span>';
 	} else{
-	$query = "insert into Reg (Username, Password, Nome, Sobrenome,Email) values ('$username','$hased','$first_name','$last_name','$email')";
+	$query = "Insert into reg (Username, Password, Nome, Sobrenome,Email) values ('".$username."' , '".$hased."' , '".$first_name."' , '".$last_name."' , '".$email."')";
 	if(mysqli_query($connection, $query)){
 		echo '<span>Utilizador registado!</span>';
-		}
+		} else {
+    echo "Error: " . $query . "<br>" . $connection->error;
+}
 	}
-}	
+}
 ?>
 		</form>
 	</table>
 	</div>
 </body>
+</html>

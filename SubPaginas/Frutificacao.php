@@ -10,7 +10,7 @@
 	<?php include("../core/header.php");?>
 	<div class="content" >	
 		<ul>
-			<li class="libtn"><a href="Frutificacao/add.php" class="btn">Adicionar</a></li>
+			<li class="libtn"><a href="Frutificacao/Add.php" class="btn">Adicionar</a></li>
 		</ul>
 			<?php
 	include("../core/connection.php");
@@ -49,7 +49,7 @@
 			<td><?php echo $linha['Modo'] ?></td>
 			<td><?php echo $linha['Kg'] ?></td>
 			<td><?php echo $linha['Repouso'] ?></td>
-			<td><a href="<?php echo "Frutificacao/Edit.php?id=". $linha['id'] . "&N=" . $linha['N'] . "&ChoqueTermico=" . $linha['ChoqueTermico'] . "&ModoCT=" . $linha['ModoCT'] . "&Data=" . $linha['Data'] . "&Modo=" . $linha['Modo'] . "&Kg=" . $linha['Kg'] . "&Repouso=". $linha['Repouso']?>"> <img class="imgs" src="../img/edit.ico"></a></td>
+			<td><a href="<?php echo "Frutificacao/Edit.php?id=". $linha['id'] . "&N=" . $linha['N'] . "&ChoqueTermico=" . $linha['ChoqueTermico'] . "&ModoCT=" . $linha['ModoCT'] . "&Data=" . $linha['Data'] . "&Modo=" . $linha['Modo'] . "&Kg=" . $linha['Kg'] . "&Repouso=". $linha['Repouso']?>"> <img class="imgs" src="../img/Edit.ico"></a></td>
 			<td><a href="<?php echo "Operacoes/Eliminar.php?id=" . $linha['id'] . "&tipo=frutificacao&tipoid=id"?>"><img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php

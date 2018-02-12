@@ -13,7 +13,7 @@
 	<?php include("../core/header.php");?>
 	<div class="content" >	
 		<ul>
-			<li class="libtn"><a href="Utilizadores/add.php" class="btn">Adicionar</a></li>
+			<li class="libtn"><a href="Utilizadores/Add.php" class="btn">Adicionar</a></li>
 		</ul>
 	<?php
 		include("../core/connection.php");
@@ -39,8 +39,8 @@
 			<td><?php echo $linha['Nome'] ?></td>
 			<td><?php echo $linha['Sobrenome'] ?></td>
 			<td><?php echo $linha['Email'] ?></td>
-			<td><a href="<?php echo "Utilizadores/Edit.php?CodReg=". $linha['CodReg'] . "&Username=" . $linha['Username'] . "&Nome=" . $linha['Nome'] . "&Sobrenome=" . $linha['Sobrenome'] . "&Email=" . $linha['Email']?>"> <img class="imgs" src="../img/edit.ico"></a></td>
-			<td><a href="<?php echo "Utilizadores/EditarPass.php?CodReg=". $linha['CodReg'] ?>"> <img class="imgs" src="../img/edit1.ico"></a></td>
+			<td><a href="<?php echo "Utilizadores/Edit.php?CodReg=". $linha['CodReg'] . "&Username=" . $linha['Username'] . "&Nome=" . $linha['Nome'] . "&Sobrenome=" . $linha['Sobrenome'] . "&Email=" . $linha['Email']?>"> <img class="imgs" src="../img/Edit.ico"></a></td>
+			<td><a href="<?php echo "Utilizadores/Editarpass.php?CodReg=". $linha['CodReg'] ?>"> <img class="imgs" src="../img/Edit1.ico"></a></td>
 			<td><a href="<?php echo "Operacoes/Eliminar.php?id=" . $linha['CodReg'] . "&tipo=reg&tipoid=CodReg"?>"><img class="imgs" src="../img/Delete.ico"></a></td>
 		</tr>
 		<?php

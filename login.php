@@ -17,7 +17,7 @@
 		<div class="form-input">
 			<input type="password" id="password" name="password" placeholder="Introduzir Password"/>
 		</div>
-		<input type ="submit" name="submit" value="Login" class="btn-login"/><br>	
+		<input type ="submit" name="submit" value="Login" class="btn-login"/><br>
 		<a href="registar.php"> Registar</a>
 		</form>
 	</div>

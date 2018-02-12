@@ -21,7 +21,7 @@
 			$Elenha = filter_input(INPUT_GET, "EspecieLenha");
 			$prod = filter_input(INPUT_GET, "ProducaoTotal");
 		?>
-	  	<form action="alterar.php">
+	  	<form action="Alterar.php">
 			<table>
 	  			<input type="hidden" name="id" value="<?php echo $id?>">
 	  			<tr><td><p align="right">Nº: <input type="int" name="N" required Value="<?php echo $N ?>"></p></td></tr>

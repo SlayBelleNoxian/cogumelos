@@ -23,7 +23,7 @@
 	 $Earvore = filter_input(INPUT_GET, "Especiearvore");
 	 $prod = filter_input(INPUT_GET, "ProducaoTotal");
 	 ?>
-	  <form action="adicionar.php">
+	  <form action="Adicionar.php">
 			<table>
 	  		<input type="hidden" name="id" value="<?php echo $id?>">
 	  		<tr><td><p align="right">Nº: <input type="int" name="N" required></p></td></tr>
